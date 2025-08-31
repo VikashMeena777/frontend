@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 40%, 96%);
+  --foreground: hsl(222, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 4.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 4.9%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --accent: hsl(181, 100%, 41%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(217, 91%, 60%);
+  --chart-1: hsl(217, 91%, 60%);
+  --chart-2: hsl(181, 100%, 41%);
+  --chart-3: hsl(45, 92%, 65%);
+  --chart-4: hsl(120, 60%, 50%);
+  --chart-5: hsl(300, 60%, 50%);
+  --radius: 1rem;
+  
+  /* XPR Brand Colors */
+  --brand-50: hsl(215, 100%, 97%);
+  --brand-100: hsl(215, 100%, 93%);
+  --brand-200: hsl(215, 100%, 85%);
+  --brand-300: hsl(215, 100%, 76%);
+  --brand-400: hsl(215, 100%, 69%);
+  --brand-500: hsl(217, 100%, 60%);
+  --brand-600: hsl(219, 84%, 63%);
+  --brand-700: hsl(221, 59%, 60%);
+  --brand-800: hsl(224, 55%, 55%);
+  --brand-900: hsl(226, 48%, 46%);
+  --ink: hsl(222, 84%, 4.9%);
+  --soft: hsl(210, 40%, 98%);
+  --turquoise: hsl(181, 100%, 41%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(222, 84%, 4.9%);
+  --secondary: hsl(217, 19%, 27%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 19%, 27%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(181, 100%, 41%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 19%, 27%);
+  --input: hsl(217, 19%, 27%);
+  --ring: hsl(217, 91%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-soft text-ink font-sans antialiased;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: rise 0.6s ease forwards;
+  }
+
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white;
+    background: linear-gradient(135deg, #3777ff, #00D2D3);
+    box-shadow: 0 8px 24px rgba(55, 119, 255, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(55, 119, 255, 0.35);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.6;
+    transform: none;
+    box-shadow: 0 8px 24px rgba(55, 119, 255, 0.25);
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-200 text-brand-700 rounded-xl px-5 py-3 font-semibold bg-white hover:bg-brand-50 transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-soft hover:shadow-lg transition-shadow;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  }
+
+  .card:hover {
+    box-shadow: 0 20px 40px rgba(16, 24, 40, 0.12);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #eef6ff 0%, #ffffff 100%);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  }
+}
