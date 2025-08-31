@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    @apply bg-soft text-ink font-sans;
+    margin: 0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: rise .6s ease forwards;
+}
+
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white;
+    background: linear-gradient(135deg, #3777ff, #00D2D3);
+    box-shadow: 0 8px 24px rgba(55, 119, 255, .25);
+    transition: transform .15s ease, box-shadow .2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(55, 119, 255, .35);
+}
+
+.btn-outline {
+    @apply border border-brand-200 text-brand-700 rounded-xl px-5 py-3 font-semibold bg-white hover:bg-brand-50;
+}
+
+.card {
+    @apply bg-white rounded-2xl shadow-soft hover:shadow-lg transition-shadow;
+}
