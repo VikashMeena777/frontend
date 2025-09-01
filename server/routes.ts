@@ -188,7 +188,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         orderId,
         amount,
         currency: "INR",
-        key: process.env.RAZORPAY_KEY || "rzp_test_dummy_key",
+        key: process.env.RAZORPAY_KEY || "rzp_test_RBsHT3KWOzCywL",
       });
     } catch {
       res.status(500).json({ message: "Failed to create payment order" });
